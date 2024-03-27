@@ -694,67 +694,159 @@ extern uint8_t  fixture_bls12_381_sha_256_h2s_scalar[32];
 // 
 
 // Expand Message Test Vectors
-extern uint8_t rfc_9380_k6_expand_message_xof_dst[];
-extern size_t rfc_9380_k6_expand_message_xof_dst_len;
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_1[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_1_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_1;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_dst[36];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_dst_len;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_1[0];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_1_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_1 = 0x20;
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_dst_prime_1[37];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_1[39];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_1[32];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_2[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_2_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_2;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_2[3];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_2_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_2 = 0x20;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_2 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_2[42];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_2[32];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_3[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_3_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_3;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_3[16];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_3_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_3 = 0x20;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_3 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_3[55];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_3[32];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_4[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_4_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_4;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_4[133];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_4_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_4 = 0x20;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_4 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_4[172];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_4[32];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_5[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_5_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_5;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_5[517];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_5_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_5 = 0x20;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_5 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_5[556];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_5[32];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_6[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_6_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_6;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_6[0];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_6_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_6 = 0x80;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_6 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_6[39];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_6[128];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_7[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_7_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_7;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_7[3];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_7_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_7 = 0x80;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_7 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_7[42];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_7[128];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_8[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_8_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_8;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_8[16];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_8_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_8 = 0x80;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_8 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_8[55];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_8[128];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_9[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_9_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_9;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_9[133];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_9_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_9 = 0x80;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_9 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_9[172];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_9[128];
-extern uint8_t rfc_9380_k6_expand_message_xof_msg_10[];
-extern size_t rfc_9380_k6_expand_message_xof_msg_10_len;
-extern size_t rfc_9380_k6_expand_message_xof_out_len_10;
+extern const uint8_t fixture_rfc_9380_k6_expand_message_xof_msg_10[517];
+extern const size_t fixture_rfc_9380_k6_expand_message_xof_msg_10_len;
+const size_t fixture_rfc_9380_k6_expand_message_xof_out_len_10 = 0x80;
 #define fixture_rfc_9380_k6_expand_message_xof_dst_prime_10 fixture_rfc_9380_k6_expand_message_xof_dst_prime_1
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_msg_prime_10[556];
 extern uint8_t  fixture_rfc_9380_k6_expand_message_xof_output_10[128];
+
+typedef struct {
+  const uint8_t* msg;
+  size_t msg_len;
+  size_t len_in_bytes;
+  const uint8_t* DST_prime;
+  const uint8_t* msg_prime;
+  const uint8_t* uniform_bytes;
+} RFC_9380_K6_EXPAND_MESSAGE_XOF_VECTOR;
+
+RFC_9380_K6_EXPAND_MESSAGE_XOF_VECTOR fixture_rfc_9380_k6_expand_message_xof_vectors[] = {
+  {
+    (const uint8_t*)"", // msg
+    0, // msg_len
+    0x20, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_1, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_1, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_1 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"abc", // msg
+    3, // msg_len
+    0x20, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_2, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_2, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_2 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"abcdef0123456789", // msg
+    16, // msg_len
+    0x20, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_3, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_3, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_3 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"q128_qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq", // msg
+    133, // msg_len
+    0x20, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_4, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_4, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_4 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"a512_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", // msg
+    517, // msg_len
+    0x20, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_5, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_5, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_5 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"", // msg
+    0, // msg_len
+    0x80, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_6, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_6, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_6 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"abc", // msg
+    3, // msg_len
+    0x80, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_7, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_7, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_7 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"abcdef0123456789", // msg
+    16, // msg_len
+    0x80, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_8, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_8, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_8 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"q128_qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq", // msg
+    133, // msg_len
+    0x80, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_9, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_9, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_9 // uniform_bytes
+  },
+  {
+    (const uint8_t*)"a512_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", // msg
+    517, // msg_len
+    0x80, // len_in_bytes
+    fixture_rfc_9380_k6_expand_message_xof_dst_prime_10, // DST_prime
+    fixture_rfc_9380_k6_expand_message_xof_msg_prime_10, // msg_prime
+    fixture_rfc_9380_k6_expand_message_xof_output_10 // uniform_bytes
+  },
+};
 
 #endif /* FIXTURESH */

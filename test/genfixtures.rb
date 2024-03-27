@@ -74,24 +74,31 @@ def hex_string(name, s)
   end
 end
 
-def ascii_string_to_c_array(name, ascii_string)
-  if $gen_header
-    puts "extern uint8_t #{name}[];"
-    puts "extern size_t #{name}_len;"
-    return
-  end
-  prefix = " "
+def ascii_string_to_c_array(ascii_string)
+  # Convert the ASCII string to a C array of integer values
+  ascii_values = ascii_string.bytes.map { |byte| byte.to_s }
+  return "[#{ascii_values.join(', ')}]"
+end
+
+def ascii_string_to_c_array_def(name, ascii_string)
+  name = "fixture_#{name}"
   ascii_values = ascii_string.bytes.map { |byte| byte.to_s }
   array_content = ascii_values.join(', ')
-  puts "uint8_t #{name}[] = { #{array_content} };"
-  puts "size_t #{name}_len = #{ascii_values.length};"
+  if $gen_header
+    puts "extern const uint8_t #{name}[#{ascii_values.length}];"
+    puts "extern const size_t #{name}_len;"
+    return
+  end
+  puts "const uint8_t #{name}[] = { #{array_content} };"
+  puts "const size_t #{name}_len = #{ascii_values.length};"
 end
 
 def print_size_t_variable(variable_name, hex_string_or_number)
-  if $gen_header
-    puts "extern size_t #{variable_name};"
+  unless $gen_header
     return
   end
+  variable_name = "fixture_#{variable_name}"
+
   if hex_string_or_number.respond_to?(:start_with)
     normalized_hex = hex_string_or_number.delete_prefix('0x')
     number = normalized_hex.to_i(16)
@@ -99,7 +106,7 @@ def print_size_t_variable(variable_name, hex_string_or_number)
     number = hex_string_or_number
   end
   # Note: "%#x" formats the number back into hex, ensuring it includes the '0x' prefix
-  c_declaration = "size_t #{variable_name} = %#x;" % number
+  c_declaration = "const size_t #{variable_name} = %#x;" % number
   puts c_declaration
 end
 
@@ -399,23 +406,50 @@ hex_string(sha + "h2s_dst", sha_h2s['dst'])
 hex_string(sha + "h2s_scalar", sha_h2s['scalar'])
 
 puts
-comment("")
-comment("RFC 9380 K.6 expand_message_xof SHAKE256 Test Vectors")
-comment("")
+comment('')
+comment('RFC 9380 K.6 expand_message_xof SHAKE256 Test Vectors')
+comment('')
 
-expand_message_xof = "rfc_9380_k6_expand_message_xof_"
+expand_message_xof = 'rfc_9380_k6_expand_message_xof_'
 
 puts
-comment("Expand Message Test Vectors")
-ascii_string_to_c_array(expand_message_xof + "dst", shake_expand_message['DST'])
-# print_size_t_variable(expand_message_xof + "dst_len", shake_expand_message['DST'].length)
+comment('Expand Message Test Vectors')
+ascii_string_to_c_array_def(expand_message_xof + "dst", shake_expand_message['DST'])
 shake_expand_message['vectors'].each_with_index do |m,idx|
-  ascii_string_to_c_array(expand_message_xof + "msg_#{idx+1}", m["msg"])
-  print_size_t_variable(expand_message_xof + "out_len_#{idx+1}", m["len_in_bytes"])
   hex_string(expand_message_xof + "dst_prime_#{idx+1}", m["DST_prime"])
   hex_string(expand_message_xof + "msg_prime_#{idx+1}", m["msg_prime"])
   hex_string(expand_message_xof + "output_#{idx+1}", m["uniform_bytes"])
-  # TODO: add length for dst, msg
+end
+
+# create an array of all expand message test vectors
+
+if $gen_header
+  puts "
+typedef struct {
+  const uint8_t* msg;
+  size_t msg_len;
+  size_t len_in_bytes;
+  const uint8_t* DST_prime;
+  const uint8_t* msg_prime;
+  const uint8_t* uniform_bytes;
+} RFC_9380_K6_EXPAND_MESSAGE_XOF_VECTOR;
+
+"
+
+  expand_message_xof = "fixture_rfc_9380_k6_expand_message_xof_"
+  puts "RFC_9380_K6_EXPAND_MESSAGE_XOF_VECTOR #{expand_message_xof}vectors[] = {"
+  shake_expand_message['vectors'].each_with_index do |m,idx|
+    puts "\
+  {
+    (const uint8_t*)\"#{m["msg"]}\", // msg
+    #{m["msg"].length}, // msg_len
+    #{m["len_in_bytes"]}, // len_in_bytes
+    #{expand_message_xof}dst_prime_#{idx+1}, // DST_prime
+    #{expand_message_xof}msg_prime_#{idx+1}, // msg_prime
+    #{expand_message_xof}output_#{idx+1} // uniform_bytes
+  },"
+  end
+  puts '};'
 end
 
 if $gen_header
