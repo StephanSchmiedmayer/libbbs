@@ -12,6 +12,7 @@ Dependencies:
 
 - `gmp`
 - `cmake` (build only)
+- `xsltproc`
 
 ### Installation
 
