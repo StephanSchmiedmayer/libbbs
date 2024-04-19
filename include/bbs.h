@@ -80,22 +80,34 @@ typedef uint8_t  bbs_signature[BBS_SIG_LEN];
 
 // Key Generation
 
+/// @brief Generate publik key pk and secret key sk with BLS12-381-SHA-256 cipher suite. 
+/// @note See bbs_keygen_full for more information.
 int bbs_sha256_keygen_full (
 	bbs_secret_key  sk,
 	bbs_public_key  pk
 	);
 
+/// @brief Generate publik key pk and secret key sk with BLS12-381-SHAKE-256 cipher suite
+/// @note See bbs_keygen_full for more information.
 int bbs_shake256_keygen_full (
 	bbs_secret_key  sk,
 	bbs_public_key  pk
 	);
 
+/// @brief Generate public key pk and secret key sk with the specified cipher suite
+/// @param cipher_suite Ciphersuite conforming to bbs_cipher_suite_t, e.g. &bbs_sha256_cipher_suite
+/// @param sk Secret key
+/// @param pk Public key
+/// @return BBS_OK if successful, BBS_ERROR otherwise
 int bbs_keygen_full (
 	bbs_cipher_suite_t *cipher_suite,
 	bbs_secret_key      sk,
 	bbs_public_key      pk
 	);
 
+
+/// @brief Generate secret key sk with BLS12-381-SHA-256 cipher suite
+/// @note See bbs_keygen for more information.
 int bbs_sha256_keygen (
 	bbs_secret_key  sk,
 	const uint8_t  *key_material,
@@ -106,6 +118,8 @@ int bbs_sha256_keygen (
 	uint8_t         key_dst_len
 	);
 
+/// @brief Generate secret key sk with BLS12-381-SHAKE-256 cipher suite
+/// @note See bbs_keygen for more information.
 int bbs_shake256_keygen (
 	bbs_secret_key  sk,
 	const uint8_t  *key_material,
@@ -116,6 +130,16 @@ int bbs_shake256_keygen (
 	uint8_t         key_dst_len
 	);
 
+/// @brief Generate secret key sk with the specified cipher suite. Corresponds to `KeyGen` from draft-irtf-cfrg-bbs-signatures-05
+/// @param cipher_suite Ciphersuite conforming to bbs_cipher_suite_t, e.g. &bbs_sha256_cipher_suite
+/// @param sk Secret key to be initialized
+/// @param key_material Secret bytes. See requirements in draft-irtf-cfrg-bbs-signatures-05, section 3.4.1
+/// @param key_material_len 
+/// @param key_info MAY be used to derive distinct keys from the same key material, defaults to empty string
+/// @param key_info_len 
+/// @param key_dst domain separation tag. Defaults to the octet string ciphersuite_id || "KEYGEN_DST_" if not supplied
+/// @param key_dst_len 
+/// @return BBS_OK if successful, BBS_ERROR otherwise
 int bbs_keygen (
 	bbs_cipher_suite_t *cipher_suite,
 	bbs_secret_key      sk,
